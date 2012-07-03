@@ -1,0 +1,18 @@
+security:
+  login:
+    username: Username or Email
+    password: Password
+    rememberme: Keep me logged in
+    submit: Sign in
+
+registration:
+    register:
+        agree: 'I agree the'
+        birthday: Birthday
+        cgu: 'General conditions of use'
+        confirmation: Confirmation
+        email: Email
+        firstname: 'First name'
+        lastname: 'Last name'
+        login: Username
+        password: Password

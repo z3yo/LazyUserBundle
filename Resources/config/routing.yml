@@ -1,0 +1,3 @@
+LazyUserBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: LazyUserBundle:Default:index }

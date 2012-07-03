@@ -1,0 +1,53 @@
+<?php
+/**
+ * UserRepository.php
+ * @package Lazy
+ */
+
+namespace Lazy\UserBundle\Repository;
+
+use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * Repository for User entity
+ * @package Lazy
+ * @subpackage UserBundle
+ * @category Repository
+ * @author Thomas Quiroga
+ */
+class UserRepository extends EntityRepository implements UserProviderInterface
+{
+
+	/**
+	 * Custom method for User provider to retrieve objects
+	 * @param string Username 
+	 */
+	public function loadUserByUsername($username)
+	{
+		return $this->getEntityManager()->createQuery(
+			'SELECT u FROM WeCookBaseBundle:User u WHERE u.userLogin = :username OR u.userEmail = :username')
+		->setParameters(array('username' => $username))
+		->getOneOrNullResult();
+	}
+
+	/**
+	 * UserProviderInterface's method
+	 * @param UserInterface $user
+	 */
+    public function refreshUser(UserInterface $user)
+    {
+    	return $this->loadUserByUsername($user->getUsername());
+    }
+ 
+ 	/**
+ 	 * UserProviderInterface's method
+ 	 * @param string Name of class
+ 	 */
+    public function supportsClass($class)
+    {
+        return $class === 'Lazy\UserBundle\Model\User';
+    }
+
+}

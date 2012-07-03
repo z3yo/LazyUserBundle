@@ -1,0 +1,29 @@
+# Desc: /api/synchronousTest
+WeCookAccueilBundle_synchronousTest: /api/synchronousTest
+
+# Desc: /api/synchronousTestWithData
+WeCookAccueilBundle_synchronousTestWithData: /api/synchronousTestWithData
+
+# Desc: /lang
+WeCookHomeBundle_changelanguage: /lang
+
+# Desc: /
+WeCookHomeBundle_home: /
+
+# Desc: /auth
+WeCookUserBundle_check: /auth
+
+# Desc: /email
+WeCookUserBundle_checkemail: /email
+
+# Desc: /confirmation
+WeCookUserBundle_confirm: /confirmation
+
+# Desc: /login
+WeCookUserBundle_login: /login
+
+# Desc: /logout
+WeCookUserBundle_logout: /logout
+
+# Desc: /inscription
+WeCookUserBundle_register: /registration

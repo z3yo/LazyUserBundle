@@ -1,0 +1,54 @@
+<?php
+
+/**
+* UserManager.php 
+* @package WeCook
+*/
+
+namespace WeCook\UserBundle\Manager;
+
+use Doctrine\ORM\EntityManager;
+use WeCook\BaseBundle\Manager\BaseManager;
+use WeCook\BaseBundle\Ideology;
+use WeCook\UserBundle\Repository\IdeologyRepository;
+use WeCook\BaseBundle\Entity\User;
+
+/**
+* Manager for Entity User
+* @package WeCook
+* @subpackage UserBundle
+* @category Manager
+* @author Thomas Quiroga
+*/
+class UserManager extends BaseManager
+{
+	/**
+	* Entity Manager
+	* @var $em
+	* @access protected
+	*/
+	protected $em;
+
+	/**
+	* Constructor
+	* @param EntityManager $em
+	*/
+	function __construct(EntityManager $em)
+	{
+		$this->em = $em;
+	}
+
+	/**
+	* Create a new Utilisateur and set default values
+	*
+	* @return Utilisateur $user
+	*/
+	public function create()
+	{
+		$user = new User(); 
+		$repo = $this->em->getRepository("WeCookBaseBundle:Ideology");
+		$user->setUserIdeology($repo->find(1));
+
+		return $user;
+	}
+}

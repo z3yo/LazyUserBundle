@@ -1,0 +1,21 @@
+security:
+  login:
+    username: Nom d'utilisateur ou Email
+    password: Mot de passe
+    rememberme: Se souvenir de moi
+    submit: Connexion
+
+registration:
+  register: 
+    login: Nom d'utilisateur
+    firstname: Prénom
+    lastname: Nom
+    email: Email
+    password: Mot de passe
+    confirmation: Confirmation
+    birthday: Date de naissance
+    agree: J'accepte les 
+    cgu: Conditions générales d'utilisation
+    submit: Valider l'inscription
+    
+

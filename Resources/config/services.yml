@@ -1,0 +1,7 @@
+parameters:
+#    we_cook_user.example.class: WeCook\UserBundle\Example
+
+services:
+    wecook.user_manager:
+        class: WeCook\UserBundle\Manager\UserManager
+        arguments: [@doctrine.orm.entity_manager]

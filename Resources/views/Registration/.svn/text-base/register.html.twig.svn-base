@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Inscription à WeCook.fr | Reprenez le controle !{% endblock %}
+
+{% block body %}
+
+{% include "WeCookUserBundle:Registration:form.html.twig" %}
+
+{% endblock %}

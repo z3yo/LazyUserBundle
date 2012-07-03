@@ -1,0 +1,39 @@
+### Routing Notice ###
+#  Model : 
+# 
+# WeCookCurrentBundle_routename:
+#    pattern:  /{param1}/example/
+#    defaults: { _controller: WeCookCurrentBundle:ControllerName:action }
+#
+# ->Route's NAME and Action's NAME must be written in ENGLISH
+# ->And the PATTERN in FRENCH
+###
+
+# --- Security Part ----
+
+WeCookUserBundle_login:
+    pattern:  /login
+    defaults: { _controller: WeCookUserBundle:Security:login }
+
+WeCookUserBundle_check:
+    pattern:  /login_check
+#    defaults: { _controller: WeCookUserBundle:Security:check }
+
+WeCookUserBundle_logout:
+    pattern:  /logout
+    defaults: { _controller: WeCookUserBundle:Security:logout }
+
+
+# --- Registration Part ----
+
+WeCookUserBundle_register:
+    pattern:  /inscription
+    defaults: { _controller: WeCookUserBundle:Registration:register }
+
+WeCookUserBundle_checkemail:
+    pattern:  /email
+    defaults: { _controller: WeCookUserBundle:Security:checkemail }
+
+WeCookUserBundle_confirm:
+    pattern:  /confirmation
+    defaults: { _controller: WeCookUserBundle:Security:confirm }

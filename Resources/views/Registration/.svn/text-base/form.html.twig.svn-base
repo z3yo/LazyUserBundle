@@ -1,0 +1,86 @@
+<form action="{{ path("WeCookUserBundle_register")}}" method="post" {{ form_enctype(form) }}>
+
+{{ form_errors(form) }}
+
+<table>
+    <tr>
+        <td>
+            {{ 'registration.register.lastname'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userlastname) }} {{ form_errors(form.userlastname) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td>
+            {{ 'registration.register.firstname'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userfirstname) }} {{ form_errors(form.userfirstname) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td>
+            {{ 'registration.register.login'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userlogin) }} {{ form_errors(form.userlogin) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td>
+            {{ 'registration.register.email'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.useremail) }} {{ form_errors(form.useremail) }}
+        </td>    
+    </tr>
+    
+    <tr>
+        <td>
+            {{ 'registration.register.password'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userpassword.password) }} {{ form_errors(form.userpassword.password) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td>
+            {{ 'registration.register.confirmation'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userpassword.confirmation) }} {{ form_errors(form.userpassword.confirmation) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td>
+            {{ 'registration.register.birthday'|trans({}, 'forms') }}
+        </td>
+        <td>
+            {{ form_widget(form.userbirthday) }} {{ form_errors(form.userbirthday) }}
+        </td>    
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            {{ form_widget(form.cgu) }} {{ 'registration.register.agree'|trans({}, 'forms') }} <a href="#">{{ 'registration.register.cgu'|trans({}, 'forms') }}</a><br/>
+            {# form_errors(form.cgu) #}
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            {{ form_rest(form) }}
+            <input type="submit" value="{{ "Valider"|trans }}" />
+        </td>
+    </tr>
+
+</table>
+</form>
+
+
